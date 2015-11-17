@@ -25,11 +25,10 @@ IF(WIN32 AND NOT UNIX)
 				
 	ENDIF(NOT ${CMAKE_GENERATOR} STREQUAL "MSYS Makefiles")
 
-ELSE(WIN32 AND NOT UNIX)
+else()
 	target_link_libraries (RakNetLibStatic ${RAKNET_LIBRARY_LIBS})
-	#INSTALL(TARGETS RakNetLibStatic DESTINATION ${RakNet_SOURCE_DIR}/Lib/RakNetLibStatic)
-ENDIF(WIN32 AND NOT UNIX)
+endif()
 
 install(TARGETS RakNetLibStatic 
-        ARCHIVE DESTINATION ${CMAKE_PREFIX_PATH}/lib
-    )
+  ARCHIVE DESTINATION lib
+)
